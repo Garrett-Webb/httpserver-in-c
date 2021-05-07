@@ -1,0 +1,30 @@
+create global flags for new functionality.
+
+in read_http_request(), look for /r, /b, /l and set flags
+
+in construct_http_response() GET case, check for flags 
+and redirect to new functions backup_helper(), recovery_helper(), list_helper()
+
+backup_helper():
+	get linux timestamp.
+	create directory "./backup-[timestamp]"
+	for every file in current directory:
+		if it is not httpserver, httpserver.o, 
+		httpserver.c, or a directory, and if
+		it is 10 alphanumeric characters, copy 
+		it into the backup using dog logic
+
+recovery_helper():
+	if there is no specified timestamp, 
+		for all backups, find the most recent.
+		set set filename to "/r/[timestamp]"
+	get directory: "./backup-[timestamp]"
+	if no such dir exists: error 404
+	for each file inside, 
+		copy to the host directory with dog logic
+
+list_helper():
+	for each file in directory:
+		if it is a directory and contains sub-string "backup-":
+			add filename to buffer
+	give buffer back to client

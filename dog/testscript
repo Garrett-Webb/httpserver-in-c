@@ -1,0 +1,10 @@
+#!/bin/bash
+
+make clean
+make
+./dog t1.txt zerofile.txt t2.txt > d1.txt
+cat t1.txt t2.txt zerofile.txt > d2.txt
+diff d1.txt d2.txt
+
+rm -f d1.txt d2.txt
+make clean
