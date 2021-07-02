@@ -1,15 +1,4 @@
-//--------------------------
-//
-// Name: Garrett Webb
-// CruzID: gswebb
-// Class: CSE130 
-// Professor: Faisal Nawab
-//
-//--------------------------
-//
-// Assignment: 0 (dog)
-//
-//--------------------------
+//Garrett Webb
 
 #include <stdio.h>   
 #include <unistd.h> 
