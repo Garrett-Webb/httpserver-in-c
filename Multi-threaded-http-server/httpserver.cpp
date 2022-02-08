@@ -46,8 +46,8 @@ struct requestObject {
     struct requestObject *next;
 };
 
-pthread_mutex_t request_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
-pthread_mutex_t hash_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
+pthread_mutex_t request_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
+pthread_mutex_t hash_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER;
 pthread_cond_t request_cond = PTHREAD_COND_INITIALIZER;
 
 int threads = 1;
